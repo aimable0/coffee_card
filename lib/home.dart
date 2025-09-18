@@ -1,3 +1,4 @@
+import 'package:coffee_card/coffee_prefs.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -7,23 +8,31 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("This is my First App"),
-        backgroundColor: Colors.grey,
+        title: Text(
+          "My Coffe Id",
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        backgroundColor: Colors.brown[800],
         centerTitle: true,
       ),
-      body: Container(
-        color: const Color.fromARGB(255, 140, 177, 98),
-        height: 100,
-        width: 300,
-        margin: EdgeInsets.all(50),
-        padding: EdgeInsets.all(20),
-        child: Text("Hello people", style: TextStyle(
-          color: const Color.fromARGB(255, 43, 42, 39),
-          fontSize: 40,
-          fontStyle: FontStyle.italic,
-          fontWeight: FontWeight.bold),
-          )
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            padding: EdgeInsets.all(20),
+            color: Colors.brown[200],
+            child: Text('How I like my coffee...'),
+          ),
+          Container(
+            padding: EdgeInsets.all(20),
+            color: Colors.brown[100],
+            child: CoffeePrefs(),
+          ),
+          Expanded(
+            child: Image.asset("assets/img/coffee_bg.jpg", fit: BoxFit.fitWidth, alignment: Alignment.bottomCenter,),
+          ), // this makes it like a flex item.
+        ],
+      ),
     );
   }
 }
