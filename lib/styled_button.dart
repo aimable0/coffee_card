@@ -11,10 +11,10 @@ class StyledButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.brown[700],
         foregroundColor: Colors.brown[50],
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.all(Radius.circular(5)),
+          borderRadius: BorderRadius.all(Radius.circular(5)),
         ),
       ),
       onPressed: onPressed,
