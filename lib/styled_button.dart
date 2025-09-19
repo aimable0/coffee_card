@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class StyledButton extends StatelessWidget {
   // constructor
-  StyledButton({required this.onPressed, required this.child, super.key});
+  const StyledButton({required this.onPressed, required this.child, super.key});
 
-  Text child;
-  void Function() onPressed;
+  final Widget child;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
